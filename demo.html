@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Lava Lamp Menu Demo</title>
+    <link rel="stylesheet" href="stylesheets/lavalamp.css" type="text/css" media="screen">
+    <script type="text/javascript" src="javascripts/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.lavalamp.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#1, #2, #3").lavaLamp({
+                fx: "backout", 
+                speed: 700,
+                click: function(event, menuItem) {
+                    return false;
+                }
+            });
+
+						//
+						// Create a lava lamp as an object
+
+						new LavaLamp('#4', {fx: 'backout', speed: 500 });
+						
+						// Now retrieve it from the element
+						// (of course, could've just assigned from constructor)
+						
+						var lavaLamp = LavaLamp.get( $('#4')[0] );
+						
+						// Set up some handlers to update lavalamp directly
+						
+						var actuators = $('#4-actuator a');
+						actuators.click(function() {
+								lavaLamp.setCurr(actuators.index(this));
+								return false;
+						});
+						
+				});
+    </script>
+</head>
+
+<body>
+
+<h3>With Image</h3>
+<ul class="lavaLampWithImage" id="1">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Plant a tree</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Ride an elephant</a></li>
+</ul>
+
+<br><br><br>
+
+<h3>No Image</h3>
+<ul class="lavaLampNoImage" id="2">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Plant a tree</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Ride an elephant</a></li>
+</ul>
+
+<br><br><br> 
+
+<h3>Bottom Style</h3>
+<ul class="lavaLampBottomStyle" id="3">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Plant a tree</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Ride an elephant</a></li>
+</ul>
+
+<h3>Object Interface</h3>
+<ul class="lavaLampWithImage" id="4">
+		<li><a href="#">Home</a></li>
+    <li><a href="#">Plant a tree</a></li>
+    <li><a href="#">Travel</a></li>
+    <li><a href="#">Ride an elephant</a></li>
+</ul>
+
+<div id='4-actuator'>
+	<a href='#'>1</a>
+	<a href='#'>2</a>
+	<a href='#'>3</a>
+	<a href='#'>4</a>
+</div>
+
+</body></html>
+
+
+
+
+
+
