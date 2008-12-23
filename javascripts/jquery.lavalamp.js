@@ -9,7 +9,8 @@
  * An interface is exposed allowing interaction with the menu through
  * an object.
  *
- * It is (read: "should be") backwards compatible.
+ * It is (read: "should be") backwards compatible. All of the original
+ * stylesheets, images and demos have been carried across.
  *
  * Tested with jQuery 1.2.6, might work with lower versions.
  *
